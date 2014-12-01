@@ -5,7 +5,7 @@ cd ${1}
 for rep in `ls -d *`
 do
   cd ${rep}
-  ~/code/aevol4.3/src/post_treatments/aevol_misc_parsemutations -b 5000 -e 10000 -g 500 -f 500 -r 0
+  ~/code/aevol4.3/src/post_treatments/aevol_misc_parsemutations -b 20000 -e 25000 -g 500 -f 500 -r 0
   for file in `ls relatedness*`
   do
     awk '{ sum += $1; n++ } END { if (n > 0) printf("%.6f\n", sum / n); }' $file >> Rsummary

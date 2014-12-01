@@ -2,12 +2,12 @@
 
 cd $1
 
-nb=`ls -d * |wc -l`
+nb=`ls -d 5* |wc -l`
 
 for g in {1..50}
 do
   m=0
-  for i in `ls -d 3*`
+  for i in `ls -d 5*`
   do
     v=`head -n ${g} ${i}/Rsummary |tail -n 1`
     m=`scale=6;echo $m+$v|bc`
@@ -18,7 +18,7 @@ done
 for g in {1..50}
 do
   m=0
-  for i in `ls -d 3*`
+  for i in `ls -d 5*`
   do
     v=`head -n ${g} ${i}/Rsummary_1 |tail -n 1`
     m=`scale=6;echo $m+$v|bc`
